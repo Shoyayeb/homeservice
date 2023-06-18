@@ -1,65 +1,62 @@
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Hero() {
   return (
-    <div className="relative bg-white overflow-hidden h-full lg:h-screen" id="home">
-      <div className="max-w-7xl mx-auto">
-        <div className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
-          <svg
-            className="hidden lg:block absolute right-0 inset-y-0 h-full lg:h-screen w-48 text-white transform translate-x-1/2"
-            fill="currentColor"
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-            aria-hidden="true"
-          >
-            <polygon points="50,0 100,0 50,100 0,100" />
-          </svg>
-
-          <div className="w-3 h-4 hidden md:block"></div>
-
-          <main className="mt-24 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-            <div className="sm:text-center lg:text-left">
-              <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                <span className="block xl:inline">The Best Home Service</span>{" "}
-                <span className="block text-yellow-600 xl:inline">near you</span>
-              </h1>
-              <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                Always providing the highest quality product in your area with{" "}
-                <span className="text-yellow-600">less charge</span> and{" "}
-                <span className="text-yellow-600">fastest delevery</span>.
-              </p>
-              <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                <div className="rounded-md shadow">
-                  <Link
-                    href="/shop"
-                    className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-yellow-600 hover:bg-yellow-700 md:py-4 md:text-lg md:px-10"
-                  >
-                    Order Now
-                  </Link>
-                </div>
-                <div className="mt-3 sm:mt-0 sm:ml-3">
-                  <Link
-                    href="/"
-                    className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-yellow-700 bg-yellow-100 hover:bg-yellow-200 md:py-4 md:text-lg md:px-10"
-                  >
-                    Contact Us
-                  </Link>
-                </div>
-              </div>
+    <div className="relative isolate px-6 pt-14 lg:px-8">
+        <div
+          className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+          aria-hidden="true"
+        >
+          <div
+            className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+            style={{
+              clipPath:
+                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+            }}
+          />
+        </div>
+        <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+          <div className="hidden sm:mb-8 sm:flex sm:justify-center">
+            <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+              Announcing our next round of funding.{' '}
+              <a href="#" className="font-semibold text-indigo-600">
+                <span className="absolute inset-0" aria-hidden="true" />
+                Read more <span aria-hidden="true">&rarr;</span>
+              </a>
             </div>
-          </main>
+          </div>
+          <div className="text-center">
+            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+              Providing <span className="text-indigo-600">Home Service</span> in your area
+            </h1>
+            <p className="mt-6 text-lg leading-8 text-gray-600">
+              In HomeService we provide all kind of service for your home. starting from as low as 99$, we provide the absolute best service in your area.
+            </p>
+            <div className="mt-10 flex items-center justify-center gap-x-6">
+              <Link
+                href="/services"
+                className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              >
+                Get started
+              </Link>
+              <Link href="/about-us" className="text-sm font-semibold leading-6 text-gray-900">
+                Learn more <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div
+          className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+          aria-hidden="true"
+        >
+          <div
+            className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+            style={{
+              clipPath:
+                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+            }}
+          />
         </div>
       </div>
-      <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-        <Image
-          width={1920}
-          height={1080}
-          className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-          src='https://img.freepik.com/free-vector/isometric-husband-hour-background-with-men-doing-repairs-housework-living-room-3d-vector-illustration_1284-77161.jpg'
-          alt="hero image"
-        />
-      </div>
-    </div>
   );
 }
