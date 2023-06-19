@@ -1,8 +1,10 @@
 'use client'
 
 import registerUser from "@/lib/registerUser";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
-import { useState } from "react";
+import { useRouter } from 'next/navigation';
+import { useEffect, useState } from "react";
 
 const LoginPage = () => {
     const [email, setEmail] = useState("");
@@ -13,6 +15,15 @@ const LoginPage = () => {
      const data = await registerUser(email, password, name);
      console.log(data);
     }
+    const { status } = useSession()
+    const router = useRouter()
+    useEffect(()=>{
+        if(status === 'authenticated'){
+            router.push('/')
+        } else {
+            console.log(status)
+        }
+    },[status,router])
     return (
         <>
             <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">

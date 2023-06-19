@@ -1,17 +1,22 @@
 
-export default async function registerUser(email:string, password:string, name:string){
-    const res = await fetch('/api/auth/user', {
+export default async function registerUser(email: string, password: string, name: string) {
+    const res = await fetch('/api/user', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
-            },
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
         body: JSON.stringify({
+            name,
             email,
             password,
-            name
         })
     })
-    console.log(res.json())
+    console.log(JSON.stringify({
+        name,
+        email,
+        password,
+    }))
     const data = await res.json();
     return data;
 }

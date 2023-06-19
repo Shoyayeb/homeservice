@@ -11,7 +11,7 @@ const handler = NextAuth({
         password: { label: "Password", type: "password" }
       },
       async authorize(credentials, req) {
-        const res = await fetch("http://localhost:3001/api/auth/login", {
+        const res = await fetch("http://localhost:3001/api/login", {
           method: 'POST',
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(credentials),
@@ -29,7 +29,7 @@ const handler = NextAuth({
   ],
   pages: {
     signIn: '/login',
-  }
+  },
 })
 
 export { handler as GET, handler as POST }

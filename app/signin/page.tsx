@@ -1,19 +1,41 @@
 'use client'
 import { signIn } from "next-auth/react";
 import Link from "next/link";
+import { useRouter } from 'next/navigation';
 import { useState } from "react";
 
 const LoginPage = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    const router = useRouter()
+
     const handleSignIn = async () => {
         signIn('credentials',{
             email,
             password,
-            redirect:true,
-            callbackUrl:'http://localhost:3001/'
+            redirect:false,
+        }).then((data) => {
+            console.log(data);
+            if(data?.ok){
+                router.push('/');
+                alert("Login Successful");
+            }else{
+                alert(data?.error);
+            }
+        }).catch((err) => {
+            console.log(err);
+            alert(err);
         })
     }
+    
+    // useEffect(()=>{
+    //     if(status === 'authenticated'){
+    //         router.push('/')
+    //     } else {
+    //         console.log(status)
+    //     }
+    // },[status,router])
     return (
         <>
             <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
